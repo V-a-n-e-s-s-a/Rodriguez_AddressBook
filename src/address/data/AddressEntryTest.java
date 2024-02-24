@@ -118,4 +118,17 @@ class AddressEntryTest {
         assertEquals("Doe", addressEntry.getLastName());
     }
 
+    /**
+     * Tests setStreet.
+     */
+    @org.junit.jupiter.api.Test
+    public void testSetStreet()
+    {
+        AddressEntry addressEntry = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        addressEntry.setStreet("456 Main St");
+        assertEquals("456 Main St", addressEntry.getStreet());
+    }
+
 }
