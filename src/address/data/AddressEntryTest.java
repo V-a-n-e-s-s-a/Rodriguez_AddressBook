@@ -243,4 +243,17 @@ class AddressEntryTest {
         assertEquals("111-1111", addressEntry.getPhone());
     }
 
+    /**
+     * Tests setEmail.
+     */
+    @org.junit.jupiter.api.Test
+    public void testSetEmail()
+    {
+        AddressEntry addressEntry = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        addressEntry.setEmail("email@email.com");
+        assertEquals("email@email.com", addressEntry.getEmail());
+    }
+
 }
