@@ -1,6 +1,8 @@
 package address.data;
 
 /**
+ * @author Vanessa Rodriguez
+ *
  * AddressEntry is a class to represent a contact in the AddressBook,
  * It contains contact information, i.e., first name, last name,
  * street, city, state, zip code, phone number, and email
@@ -177,7 +179,7 @@ public class AddressEntry {
      * Get and return the city where contact lives.
      * @return The city where the contact lives.
      */
-    public String getcity()
+    public String getCity()
     {
         return city;
     }
