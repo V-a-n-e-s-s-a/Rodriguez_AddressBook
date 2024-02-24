@@ -48,4 +48,24 @@ class AddressEntryTest {
         assertEquals("john@example.com", addressEntry.getEmail());
     }
 
+    /**
+     * Test toString(), method for printing.
+     */
+    @org.junit.jupiter.api.Test
+    public void testToString()
+    {
+        AddressEntry addressEntry = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+
+        assertEquals("First Name: John" +
+                "\nLast Name: Doe" +
+                "\nStreet: 123 Main St" +
+                "\nCity: Alameda" +
+                "\nState: California" +
+                "\nZip: 12345" +
+                "\nPhone: 111-1111" +
+                "\nEmail: john@example.com" + "\n", addressEntry.toString());
+    }
+
 }
