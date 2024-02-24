@@ -168,5 +168,17 @@ class AddressEntryTest {
         assertEquals("Alameda", addressEntry.getCity());
     }
 
+    /**
+     * Tests setState.
+     */
+    @org.junit.jupiter.api.Test
+    public void testSetState()
+    {
+        AddressEntry addressEntry = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        addressEntry.setState("State");
+        assertEquals("State", addressEntry.getState());
+    }
 
 }
