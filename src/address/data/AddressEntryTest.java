@@ -106,4 +106,16 @@ class AddressEntryTest {
         assertEquals("Gonzales", addressEntry.getLastName());
     }
 
+    /**
+     * Tests getLastName.
+     */
+    @org.junit.jupiter.api.Test
+    public void testGetLastName()
+    {
+        AddressEntry addressEntry = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        assertEquals("Doe", addressEntry.getLastName());
+    }
+
 }
