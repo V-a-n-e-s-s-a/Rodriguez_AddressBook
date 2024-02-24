@@ -114,9 +114,9 @@ public class AddressEntry {
 
     /**
      * Set the contact's first name.
-     * @param firstname is the contact's first name.
+     * @param firstName is the contact's first name.
      */
-    public void setFirstName(String firstname)
+    public void setFirstName(String firstName)
     {
         this.firstName = firstName;
     }

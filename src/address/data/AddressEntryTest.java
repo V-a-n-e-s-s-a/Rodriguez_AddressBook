@@ -68,4 +68,17 @@ class AddressEntryTest {
                 "\nEmail: john@example.com" + "\n", addressEntry.toString());
     }
 
+    /**
+     * Tests setFirstName.
+     */
+    @org.junit.jupiter.api.Test
+    public void testSetFirstName()
+    {
+        AddressEntry addressEntry = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        addressEntry.setFirstName("Bob");
+        assertEquals("Bob", addressEntry.getFirstName());
+    }
+
 }
