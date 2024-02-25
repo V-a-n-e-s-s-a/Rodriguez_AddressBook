@@ -46,6 +46,7 @@ class AddressEntryTest {
         assertEquals(12345, addressEntry.getZip());
         assertEquals("111-1111", addressEntry.getPhone());
         assertEquals("john@example.com", addressEntry.getEmail());
+
     }
 
     /**
@@ -66,6 +67,10 @@ class AddressEntryTest {
                 "\nZip: 12345" +
                 "\nPhone: 111-1111" +
                 "\nEmail: john@example.com" + "\n", addressEntry.toString());
+
+        // Failure
+        assertNotEquals("Wrong format", addressEntry.toString(),
+                "Invalid format.");
     }
 
     /**
@@ -79,6 +84,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setFirstName("Bob");
         assertEquals("Bob", addressEntry.getFirstName());
+
+        // Failure
+        assertNotEquals("WrongName", addressEntry.getFirstName(),
+                        "Invalid first name.");
+
+        // Test two
+        addressEntry.setFirstName("Name");
+        assertEquals("Name", addressEntry.getFirstName());
+
+        // Failure
+        assertNotEquals("WrongName", addressEntry.getFirstName(),
+                "Invalid first name.");
     }
 
     /**
@@ -91,6 +108,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("John", addressEntry.getFirstName());
+
+        // Failure
+        assertNotEquals("WrongName", addressEntry.getFirstName(),
+                "Invalid first name.");
+
+        // Test two
+        addressEntry.setFirstName("Name");
+        assertEquals("Name", addressEntry.getFirstName());
+
+        // Failure
+        assertNotEquals("WrongName", addressEntry.getFirstName(),
+                "Invalid first name.");
     }
 
     /**
@@ -104,6 +133,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setLastName("Gonzales");
         assertEquals("Gonzales", addressEntry.getLastName());
+
+        // Failure
+        assertNotEquals("WrongLastName", addressEntry.getLastName(),
+                "Invalid last name.");
+
+        // Test two
+        addressEntry.setLastName("Lastname");
+        assertEquals("Lastname", addressEntry.getLastName());
+
+        // Failure
+        assertNotEquals("WrongLastName", addressEntry.getLastName(),
+                "Invalid last name.");
     }
 
     /**
@@ -116,6 +157,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("Doe", addressEntry.getLastName());
+
+        // Failure
+        assertNotEquals("WrongLastName", addressEntry.getLastName(),
+                "Invalid last name.");
+
+        // Test two
+        addressEntry.setLastName("Lastname");
+        assertEquals("Lastname", addressEntry.getLastName());
+
+        // Failure
+        assertNotEquals("WrongLastName", addressEntry.getLastName(),
+                "Invalid last name.");
     }
 
     /**
@@ -129,6 +182,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setStreet("456 Main St");
         assertEquals("456 Main St", addressEntry.getStreet());
+
+        // Failure
+        assertNotEquals("WrongStreet", addressEntry.getStreet(),
+                "Invalid street.");
+
+        // Test two
+        addressEntry.setStreet("111 Street Name");
+        assertEquals("111 Street Name", addressEntry.getStreet());
+
+        // Failure
+        assertNotEquals("WrongStreet", addressEntry.getStreet(),
+                "Invalid street.");
     }
 
     /**
@@ -141,6 +206,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("123 Main St", addressEntry.getStreet());
+
+        // Failure
+        assertNotEquals("WrongStreet", addressEntry.getStreet(),
+                "Invalid street.");
+
+        // Test two
+        addressEntry.setStreet("111 Street Name");
+        assertEquals("111 Street Name", addressEntry.getStreet());
+
+        // Failure
+        assertNotEquals("WrongStreet", addressEntry.getStreet(),
+                "Invalid street.");
     }
 
     /**
@@ -154,6 +231,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setCity("City");
         assertEquals("City", addressEntry.getCity());
+
+        // Failure
+        assertNotEquals("WrongCity", addressEntry.getCity(),
+                "Invalid city.");
+
+        // Test two
+        addressEntry.setCity("City2");
+        assertEquals("City2", addressEntry.getCity());
+
+        // Failure
+        assertNotEquals("WrongCity", addressEntry.getCity(),
+                "Invalid city.");
     }
 
     /**
@@ -166,6 +255,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("Alameda", addressEntry.getCity());
+
+        // Failure
+        assertNotEquals("WrongCity", addressEntry.getCity(),
+                "Invalid city.");
+
+        // Test two
+        addressEntry.setCity("City2");
+        assertEquals("City2", addressEntry.getCity());
+
+        // Failure
+        assertNotEquals("WrongCity", addressEntry.getCity(),
+                "Invalid city.");
     }
 
     /**
@@ -179,6 +280,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setState("State");
         assertEquals("State", addressEntry.getState());
+
+        // Failure
+        assertNotEquals("WrongState", addressEntry.getState(),
+                "Invalid state.");
+
+        // Test two
+        addressEntry.setState("State2");
+        assertEquals("State2", addressEntry.getState());
+
+        // Failure
+        assertNotEquals("WrongState", addressEntry.getState(),
+                "Invalid state.");
     }
 
     /**
@@ -191,6 +304,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("California", addressEntry.getState());
+
+        // Failure
+        assertNotEquals("WrongState", addressEntry.getState(),
+                "Invalid state.");
+
+        // Test two
+        addressEntry.setState("State2");
+        assertEquals("State2", addressEntry.getState());
+
+        // Failure
+        assertNotEquals("WrongState", addressEntry.getState(),
+                "Invalid state.");
     }
 
     /**
@@ -204,6 +329,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setZip(11111);
         assertEquals(11111, addressEntry.getZip());
+
+        // Failure
+        assertNotEquals(0, addressEntry.getZip(),
+                "Invalid zip code.");
+
+        // Test two
+        addressEntry.setZip(22222);
+        assertEquals(22222, addressEntry.getZip());
+
+        // Failure
+        assertNotEquals(0, addressEntry.getZip(),
+                "Invalid zip code.");
     }
 
     /**
@@ -216,6 +353,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals(12345, addressEntry.getZip());
+
+        // Failure
+        assertNotEquals(0, addressEntry.getZip(),
+                "Invalid zip code.");
+
+        // Test two
+        addressEntry.setZip(22222);
+        assertEquals(22222, addressEntry.getZip());
+
+        // Failure
+        assertNotEquals(0, addressEntry.getZip(),
+                "Invalid zip code.");
     }
 
     /**
@@ -229,6 +378,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setPhone("222-2222");
         assertEquals("222-2222", addressEntry.getPhone());
+
+        // Failure
+        assertNotEquals("000-0000", addressEntry.getPhone(),
+                "Invalid phone number.");
+
+        // Test two
+        addressEntry.setPhone("333-3333");
+        assertEquals("333-3333", addressEntry.getPhone());
+
+        // Failure
+        assertNotEquals("000-0000", addressEntry.getPhone(),
+                "Invalid phone number.");
     }
 
     /**
@@ -241,6 +402,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("111-1111", addressEntry.getPhone());
+
+        // Failure
+        assertNotEquals("000-0000", addressEntry.getPhone(),
+                "Invalid phone number.");
+
+        // Test two
+        addressEntry.setPhone("333-3333");
+        assertEquals("333-3333", addressEntry.getPhone());
+
+        // Failure
+        assertNotEquals("000-0000", addressEntry.getPhone(),
+                "Invalid phone number.");
     }
 
     /**
@@ -254,6 +427,18 @@ class AddressEntryTest {
                 "111-1111", "john@example.com");
         addressEntry.setEmail("email@email.com");
         assertEquals("email@email.com", addressEntry.getEmail());
+
+        // Failure
+        assertNotEquals("wrong@email.com", addressEntry.getEmail(),
+                "Invalid email.");
+
+        // Test two
+        addressEntry.setEmail("email@address.com");
+        assertEquals("email@address.com", addressEntry.getEmail());
+
+        // Failure
+        assertNotEquals("wrong@email.com", addressEntry.getEmail(),
+                "Invalid email.");
     }
 
     /**
@@ -266,6 +451,18 @@ class AddressEntryTest {
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
         assertEquals("john@example.com", addressEntry.getEmail());
+
+        // Failure
+        assertNotEquals("wrong@email.com", addressEntry.getEmail(),
+                "Invalid email.");
+
+        // Test two
+        addressEntry.setEmail("email@address.com");
+        assertEquals("email@address.com", addressEntry.getEmail());
+
+        // Failure
+        assertNotEquals("wrong@email.com", addressEntry.getEmail(),
+                "Invalid email.");
     }
 
 }
