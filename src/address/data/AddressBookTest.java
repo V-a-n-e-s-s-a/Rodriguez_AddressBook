@@ -2,6 +2,7 @@ package address.data;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -158,6 +159,60 @@ class AddressBookTest {
 
         assertNotEquals("entry100", addressBook.addressEntryList.get(1),
                 "Entry doesn't exist.");
+
+    }
+
+    /**
+     * Test find (based on last name).
+     */
+    @org.junit.jupiter.api.Test
+    public void testFind()
+    {
+        /**
+         * Create an instance of AddressBook called addressBook.
+         */
+        AddressBook addressBook = new AddressBook();
+
+        /**
+         * Create three instances of AddressEntry.
+         */
+        AddressEntry entry1 = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        AddressEntry entry2 = new AddressEntry("Jane", "Does", "456 Oak St", "Aspen",
+                "Colorado", 67891, "222-2222", "jane@example.com");
+
+        AddressEntry entry3 = new AddressEntry("Jane", "Smith", "456 Oak St", "Aspen",
+                "Colorado", 67891, "222-2222", "jane@example.com");
+
+        /**
+         * Add AddressEntry instances to the AddressBook.
+         */
+        addressBook.add(entry1);
+        addressBook.add(entry2);
+
+        /**
+         * Test finding a match for partial lastname.
+         */
+        Set<AddressEntry> find1 = addressBook.find("Do");
+
+        /**
+         * Test to see if two entries have "Do"
+         */
+        assertEquals(2, find1.size());
+
+        // Test 2
+        addressBook.add(entry3);
+
+        /**
+         * Test to see if one entry has "Smith"
+         */
+        Set<AddressEntry> find2 = addressBook.find("Smith");
+        assertEquals(1, find2.size());
+
+        // Failure
+        assertNotEquals(0, addressBook.find(" "),
+                "Did not find entry.");
 
     }
 
