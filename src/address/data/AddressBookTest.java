@@ -56,7 +56,8 @@ class AddressBookTest {
     }
 
     /**
-     * Tests the behavior of AddressBook.
+     * Tests the behavior of AddressBook and makes sure 2 address
+     * entries are in the list.
      */
     @org.junit.jupiter.api.Test
     public void testAddressBook()
@@ -67,7 +68,7 @@ class AddressBookTest {
         AddressBook addressBook = new AddressBook();
 
         /**
-         * Create two instance of AddressEntry.
+         * Create two instances of AddressEntry.
          */
         AddressEntry entry1 = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
@@ -76,7 +77,7 @@ class AddressBookTest {
                 "Colorado", 67891, "222-2222", "jane@example.com");
 
         /**
-         * Add AddressEntry instances to the AddressBook.
+         * Add AddressEntry instances to the AddressBook - 2 tests.
          */
         addressBook.add(entry1);
         addressBook.add(entry2);
@@ -96,6 +97,11 @@ class AddressBookTest {
          * Compare actual and expected output.
          */
         assertEquals(expectedOutput, contentsOfList);
+
+        // Failure
+        assertNotEquals("Incorrect output", expectedOutput,
+                "Invalid output.");
+
     }
 
 }
