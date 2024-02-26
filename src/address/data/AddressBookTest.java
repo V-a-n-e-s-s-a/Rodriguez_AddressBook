@@ -216,4 +216,41 @@ class AddressBookTest {
 
     }
 
+    @org.junit.jupiter.api.Test
+    public void testRemove()
+    {
+        /**
+         * Create an instance of AddressBook called addressBook.
+         */
+        AddressBook addressBook = new AddressBook();
+
+        /**
+         * Create two instances of AddressEntry.
+         */
+        AddressEntry entry1 = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        AddressEntry entry2 = new AddressEntry("Jane", "Does", "456 Oak St", "Aspen",
+                "Colorado", 67891, "222-2222", "jane@example.com");
+
+        /**
+         * Add AddressEntry instances to the AddressBook.
+         */
+        addressBook.add(entry1);
+        addressBook.add(entry2);
+
+        addressBook.remove("Doe");
+
+        assertFalse(addressBook.find("Doe").contains(entry1));
+
+        // Test 2
+        addressBook.remove("Smith");
+
+        assertFalse(addressBook.find("Smith").contains(entry1));
+
+        //Failure
+        assertNotEquals(2, addressBook.addressEntryList.size(),
+                "Did not remove.");
+    }
+
 }
