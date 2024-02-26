@@ -103,5 +103,62 @@ class AddressBookTest {
                 "Invalid output.");
 
     }
+    /**
+     * Tests method that adds a contact to the list.
+     */
+    @org.junit.jupiter.api.Test
+    public void testAddAddress()
+    {
+        /**
+         * Create an instance of AddressBook called addressBook.
+         */
+        AddressBook addressBook = new AddressBook();
+
+        /**
+         * Create two instance of AddressEntry.
+         */
+        AddressEntry entry1 = new AddressEntry("John", "Doe",
+                "123 Main St", "Alameda", "California", 12345,
+                "111-1111", "john@example.com");
+        AddressEntry entry2 = new AddressEntry("Jane", "Smith", "456 Oak St", "Aspen",
+                "Colorado", 67891, "222-2222", "jane@example.com");
+
+        /**
+         * Add AddressEntry instance to the AddressBook.
+         */
+        addressBook.add(entry1);
+
+        /**
+         * Makes sure size of the AddressBook is 1.
+         */
+        assertEquals(1, addressBook.addressEntryList.size());
+
+        /**
+         * index 0 of addressEntryList is entry 1.
+         */
+        assertEquals(entry1, addressBook.addressEntryList.get(0));
+
+        // Test 2
+
+        addressBook.add(entry2);
+
+        /**
+         * Makes sure size of the AddressBook is 2.
+         */
+        assertEquals(2, addressBook.addressEntryList.size());
+
+        /**
+         * index 1 of addressEntryList is entry 2.
+         */
+        assertEquals(entry2, addressBook.addressEntryList.get(1));
+
+        // Failure
+        assertNotEquals(100, addressBook.addressEntryList.size(),
+                "Wrong size.");
+
+        assertNotEquals("entry100", addressBook.addressEntryList.get(1),
+                "Entry doesn't exist.");
+
+    }
 
 }
