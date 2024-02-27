@@ -16,8 +16,14 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testDefaultConstructor()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry();
 
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("", addressEntry.getFirstName());
         assertEquals("", addressEntry.getLastName());
         assertEquals("", addressEntry.getStreet());
@@ -34,10 +40,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testParameterizedContructor()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
 
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("John", addressEntry.getFirstName());
         assertEquals("Doe", addressEntry.getLastName());
         assertEquals("123 Main St", addressEntry.getStreet());
@@ -55,18 +67,18 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testToString()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
 
-        assertEquals("First Name: John" +
-                "\nLast Name: Doe" +
-                "\nStreet: 123 Main St" +
-                "\nCity: Alameda" +
-                "\nState: California" +
-                "\nZip: 12345" +
-                "\nPhone: 111-1111" +
-                "\nEmail: john@example.com" + "\n", addressEntry.toString());
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("John\nDoe\n123 Main St\nAlameda\nCalifornia\n" +
+                "12345\n111-1111\njohn@example.com\n", addressEntry.toString());
 
         // Failure
         assertNotEquals("Wrong format", addressEntry.toString(),
@@ -79,9 +91,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetFirstName()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setFirstName("Bob");
         assertEquals("Bob", addressEntry.getFirstName());
 
@@ -104,9 +123,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     void testGetFirstName()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("John", addressEntry.getFirstName());
 
         // Failure
@@ -128,9 +154,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetLastName()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setLastName("Gonzales");
         assertEquals("Gonzales", addressEntry.getLastName());
 
@@ -153,9 +186,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testGetLastName()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("Doe", addressEntry.getLastName());
 
         // Failure
@@ -177,9 +217,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetStreet()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setStreet("456 Main St");
         assertEquals("456 Main St", addressEntry.getStreet());
 
@@ -202,9 +249,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testGetStreet()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("123 Main St", addressEntry.getStreet());
 
         // Failure
@@ -226,9 +280,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetCity()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setCity("City");
         assertEquals("City", addressEntry.getCity());
 
@@ -251,9 +312,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testGetCity()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("Alameda", addressEntry.getCity());
 
         // Failure
@@ -275,9 +343,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetState()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setState("State");
         assertEquals("State", addressEntry.getState());
 
@@ -300,9 +375,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testGetState()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("California", addressEntry.getState());
 
         // Failure
@@ -324,9 +406,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetZip()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setZip(11111);
         assertEquals(11111, addressEntry.getZip());
 
@@ -349,9 +438,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testGetZip()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals(12345, addressEntry.getZip());
 
         // Failure
@@ -373,9 +469,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetPhone()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setPhone("222-2222");
         assertEquals("222-2222", addressEntry.getPhone());
 
@@ -398,9 +501,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testGetPhone()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("111-1111", addressEntry.getPhone());
 
         // Failure
@@ -422,9 +532,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     public void testSetEmail()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         addressEntry.setEmail("email@email.com");
         assertEquals("email@email.com", addressEntry.getEmail());
 
@@ -447,9 +564,16 @@ class AddressEntryTest {
     @org.junit.jupiter.api.Test
     void testGetEmail()
     {
+        /**
+         * Create an instance of AddressEntry called addressEntry.
+         */
         AddressEntry addressEntry = new AddressEntry("John", "Doe",
                 "123 Main St", "Alameda", "California", 12345,
                 "111-1111", "john@example.com");
+
+        /**
+         * Compare actual and expected output.
+         */
         assertEquals("john@example.com", addressEntry.getEmail());
 
         // Failure
