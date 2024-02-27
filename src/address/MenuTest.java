@@ -136,7 +136,7 @@ class MenuTest {
         /**
          * Compare actual and expected output.
          */
-        assertEquals("Smith", Menu.prompt_FirstName());
+        assertEquals("Smith", Menu.prompt_LastName());
 
         // Test 2
         /**
@@ -149,11 +149,47 @@ class MenuTest {
         /**
          * Compare actual and expected output.
          */
-        assertEquals("Doe", Menu.prompt_FirstName());
+        assertEquals("Doe", Menu.prompt_LastName());
 
         // Failure
         assertNotEquals("NotDoe", "Doe",
                 "Wrong last name.");
+    }
+
+    /**
+     * Tests Prompt_Street.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_Street()
+    {
+        /**
+         * Prepare input(street) for the test.
+         */
+        String input = "1111 Address St.";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("1111 Address St.", Menu.prompt_Street());
+
+        // Test 2
+        /**
+         * Prepare input(street) for the test.
+         */
+        input = "2222 Address St.";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("2222 Address St.", Menu.prompt_Street());
+
+        // Failure
+        assertNotEquals("2 Address St.", "2222 Address St.",
+                "Wrong street.");
     }
 
 }
