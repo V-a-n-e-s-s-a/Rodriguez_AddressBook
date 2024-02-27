@@ -6,26 +6,32 @@ import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Vanessa Rodriguez
+ *
+ * Test class for Menu class.
+ */
+
 class MenuTest {
 
     /**
      * ByteArrayOutputStream captures the output that is displayed.
      *
-     * Used for testDisplayMenu.
+     * Used for all methods in MenuTest.
      */
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     /**
      * Stores System.out.
      *
-     * Used for testDisplayMenu.
+     * Used for all methods in MenuTest.
      */
     private final PrintStream originalOut = System.out;
 
     /**
      * Method to set up the test before each test method runs.
      *
-     * Used for testDisplayMenu.
+     * Used for all methods in MenuTest.
      */
     @org.junit.jupiter.api.BeforeEach
     public void setUpStreams()
@@ -36,6 +42,10 @@ class MenuTest {
         System.setOut(new PrintStream(outContent));
     }
 
+    /**
+     * Tests testDisplayMenu.
+     * @throws FileNotFoundException
+     */
     @org.junit.jupiter.api.Test
     public void testDisplayMenu() throws FileNotFoundException {
 
@@ -72,6 +82,39 @@ class MenuTest {
         assertNotEquals("Quitting", expectedOutput,
                 "Invalid output.");
 
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testPrompt_FirstName()
+    {
+        /**
+         * Prepare input(name) for the test.
+         */
+        String input = "John";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("John", Menu.prompt_FirstName());
+
+        // Test 2
+        /**
+         * Prepare input(name) for the test.
+         */
+        input = "Jane";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("Jane", Menu.prompt_FirstName());
+
+        // Failure
+        assertNotEquals("NotJane", "Jane",
+                "Wrong name.");
     }
 
 }
