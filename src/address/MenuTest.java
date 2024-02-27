@@ -43,7 +43,7 @@ class MenuTest {
     }
 
     /**
-     * Tests testDisplayMenu.
+     * Tests DisplayMenu.
      * @throws FileNotFoundException
      */
     @org.junit.jupiter.api.Test
@@ -84,6 +84,9 @@ class MenuTest {
 
     }
 
+    /**
+     * Tests Prompt_FirstName.
+     */
     @org.junit.jupiter.api.Test
     public void testPrompt_FirstName()
     {
@@ -115,6 +118,42 @@ class MenuTest {
         // Failure
         assertNotEquals("NotJane", "Jane",
                 "Wrong name.");
+    }
+
+    /**
+     * Tests Prompt_LastName.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_LastName()
+    {
+        /**
+         * Prepare input(last name) for the test.
+         */
+        String input = "Smith";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("Smith", Menu.prompt_FirstName());
+
+        // Test 2
+        /**
+         * Prepare input(last name) for the test.
+         */
+        input = "Doe";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("Doe", Menu.prompt_FirstName());
+
+        // Failure
+        assertNotEquals("NotDoe", "Doe",
+                "Wrong last name.");
     }
 
 }
