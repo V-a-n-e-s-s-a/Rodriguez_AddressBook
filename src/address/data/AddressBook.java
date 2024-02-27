@@ -86,8 +86,27 @@ public class AddressBook {
 
         while (scan.hasNextLine())
         {
-            System.out.println(scan.nextLine());
+            scan.nextLine().trim();
+            String firstName = scan.nextLine().trim();
+            String lastName = scan.nextLine().trim();
+            String street = scan.nextLine().trim();
+            String city = scan.nextLine().trim();
+            String state = scan.nextLine().trim();
+            int zip = scan.nextInt();
+            scan.nextLine();
+            String phone = scan.nextLine().trim();
+            String email = scan.nextLine().trim();
+
+            /**
+             * Adds the file contents to the AddressBook
+             */
+            AddressEntry entry = new AddressEntry(firstName, lastName,
+                    street, city, state, zip, phone, email);
+
+            addressEntryList.add(entry);
         }
+
+        scan.close();
     }
 
     /**
