@@ -98,14 +98,14 @@ public class AddressEntry {
      */
     public String toString()
     {
-        return "First Name: " + firstName +
-                "\nLast Name: " + lastName +
-                "\nStreet: " + street +
-                "\nCity: " + city +
-                "\nState: " + state +
-                "\nZip: " + zip +
-                "\nPhone: " + phone +
-                "\nEmail: " + email + "\n";
+        return firstName +
+                "\n" + lastName +
+                "\n" + street +
+                "\n" + city +
+                "\n" + state +
+                "\n" + zip +
+                "\n" + phone +
+                "\n" + email + "\n";
     }
 
     /**
