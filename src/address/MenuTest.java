@@ -336,4 +336,40 @@ class MenuTest {
                 "Wrong phone number.");
     }
 
+    /**
+     * Tests Prompt_Email.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_Email()
+    {
+        /**
+         * Prepare input(email) for the test.
+         */
+        String input = "felix@yahoo.com";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("felix@yahoo.com", Menu.prompt_Email());
+
+        // Test 2
+        /**
+         * Prepare input(email) for the test.
+         */
+        input = "sij@gmail.com";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("sij@gmail.com", Menu.prompt_Email());
+
+        // Failure
+        assertNotEquals("wrong@gmail.com", "sij@gmail.com",
+                "Wrong email.");
+    }
+
 }
