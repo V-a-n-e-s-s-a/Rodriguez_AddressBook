@@ -59,7 +59,7 @@ public class Menu {
                  */
                 case "a":
                     Scanner scanFileName = new Scanner(System.in);
-                    System.out.println("Enter in FileName:\n");
+                    System.out.println("Enter in FileName:");
                     addressBook.readFromFile(scanFileName.nextLine());
                     break;
 
@@ -91,8 +91,9 @@ public class Menu {
                      * Finds the entries with same last name and displays them to the screen.
                      */
                     Scanner scanLastName = new Scanner(System.in);
-                    System.out.println("Enter in Last Name of contact to remove:\n");
-                    Set<AddressEntry> matchingEntries = addressBook.find(scanLastName.nextLine());
+                    System.out.println("Enter in Last Name of contact to remove:");
+                    String lastNameInput = scanLastName.nextLine();
+                    Set<AddressEntry> matchingEntries = addressBook.find(lastNameInput);
 
                     System.out.println("The following entry was found in the address book.\n");
                     for (AddressEntry foundEntry : matchingEntries)
@@ -104,13 +105,13 @@ public class Menu {
                      * Removes the entries if user decides to.
                      */
                     Scanner scanYesOrNo = new Scanner(System.in);
-                    System.out.println("Hit 'y' to remove the entry or 'n' to return to main menu\n");
+                    System.out.println("Hit 'y' to remove the entry or 'n' to return to main menu");
 
-                    if (scanYesOrNo.nextLine() == "y")
+                    if (scanYesOrNo.nextLine().equals("y"))
                     {
                         for (AddressEntry foundEntry : matchingEntries)
                         {
-                            addressBook.remove(scanLastName.nextLine());
+                            addressBook.remove(lastNameInput);
                         }
                     }
                     break;
@@ -123,11 +124,12 @@ public class Menu {
                      * Finds the entries with same last name and displays them to the screen.
                      */
                     Scanner scanFindLastName = new Scanner(System.in);
-                    System.out.println("Enter in all or beginning of last name you wish to find:\n");
-                    Set<AddressEntry> entries = addressBook.find(scanFindLastName.nextLine());
+                    System.out.println("Enter in all or beginning of last name you wish to find:");
+                    String input = scanFindLastName.nextLine();
+                    Set<AddressEntry> entries = addressBook.find(input);
 
                     System.out.println("The following entries were found in the address" +
-                            " book for a last name starting with" + scanFindLastName.nextLine() + "\n");
+                            " book for a last name starting with " + input + "\n");
 
                     for (AddressEntry foundEntry : entries)
                     {
