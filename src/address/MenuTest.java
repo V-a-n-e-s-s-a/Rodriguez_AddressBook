@@ -225,7 +225,43 @@ class MenuTest {
 
         // Failure
         assertNotEquals("NotOakland", "Oakland",
-                "Wrong street.");
+                "Wrong city.");
+    }
+
+    /**
+     * Tests Prompt_State.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_State()
+    {
+        /**
+         * Prepare input(state) for the test.
+         */
+        String input = "California";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("California", Menu.prompt_State());
+
+        // Test 2
+        /**
+         * Prepare input(state) for the test.
+         */
+        input = "IL";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("IL", Menu.prompt_State());
+
+        // Failure
+        assertNotEquals("Not IL", "IL",
+                "Wrong state.");
     }
 
 }
