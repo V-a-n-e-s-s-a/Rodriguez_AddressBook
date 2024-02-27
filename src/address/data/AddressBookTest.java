@@ -1,6 +1,7 @@
 package address.data;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Set;
 
@@ -253,4 +254,73 @@ class AddressBookTest {
                 "Did not remove.");
     }
 
+    @org.junit.jupiter.api.Test
+    public void testReadFromFile() throws FileNotFoundException {
+        /**
+         * Create an instance of AddressBook called addressBook.
+         */
+        AddressBook addressBook = new AddressBook();
+
+        /**
+         * Read from the file.
+         */
+        addressBook.readFromFile("entries.txt");
+
+        /**
+         * Make sure there are currently 5 entries.
+         */
+        assertEquals(5, addressBook.addressEntryList.size());
+
+        /**
+         * Make sure the first entry has the correct information.
+         */
+        AddressEntry entry1 = addressBook.addressEntryList.get(0);
+        assertEquals("Jane", entry1.getFirstName());
+        assertEquals("Beppson", entry1.getLastName());
+        assertEquals("1231 Fun St.", entry1.getStreet());
+        assertEquals("Oakland", entry1.getCity());
+        assertEquals("CA", entry1.getState());
+        assertEquals(12345, entry1.getZip());
+        assertEquals("323-234-5623", entry1.getPhone());
+        assertEquals("fun@gmail.com", entry1.getEmail());
+
+        // Test 2
+
+        /**
+         * Make sure the second entry has the correct information.
+         */
+        AddressEntry entry2 = addressBook.addressEntryList.get(1);
+        assertEquals("Maddie", entry2.getFirstName());
+        assertEquals("Felix", entry2.getLastName());
+        assertEquals("2 Fifth Street", entry2.getStreet());
+        assertEquals("Hayward", entry2.getCity());
+        assertEquals("CA", entry2.getState());
+        assertEquals(95010, entry2.getZip());
+        assertEquals("510-234-5678", entry2.getPhone());
+        assertEquals("felix@yahoo.com", entry2.getEmail());
+
+        // Failure
+        assertNotEquals(1, addressBook.addressEntryList.size(),
+                "Incorrect size.");
+
+        /**
+         * Wrong information.
+         */
+        AddressEntry entry3 = addressBook.addressEntryList.get(1);
+        assertNotEquals("Name", entry3.getFirstName(),
+                "Incorrect name.");
+        assertNotEquals("LastName", entry3.getLastName(),
+                "Incorrect last name.");
+        assertNotEquals("Street", entry3.getStreet(),
+                "Incorrect street.");
+        assertNotEquals("City", entry3.getCity(),
+                "Incorrect city.");
+        assertNotEquals("State", entry3.getState(),
+                "Incorrect state.");
+        assertNotEquals(00000, entry3.getZip(), "Incorrect zip.");
+        assertNotEquals("000-000-0000", entry3.getPhone(),
+                "Incorrect phone number.");
+        assertNotEquals("wrong@email.com", entry3.getEmail(),
+                "Incorrect email.");
+    }
 }
