@@ -264,4 +264,40 @@ class MenuTest {
                 "Wrong state.");
     }
 
+    /**
+     * Tests Prompt_Zip.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_Zip()
+    {
+        /**
+         * Prepare input(zip code) for the test.
+         */
+        String input = "11111";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals(11111, Menu.prompt_Zip());
+
+        // Test 2
+        /**
+         * Prepare input(zip code) for the test.
+         */
+        input = "22222";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals(22222, Menu.prompt_Zip());
+
+        // Failure
+        assertNotEquals(00000, 22222,
+                "Wrong zip code.");
+    }
+
 }
