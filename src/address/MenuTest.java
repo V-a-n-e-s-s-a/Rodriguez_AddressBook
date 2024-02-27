@@ -300,4 +300,40 @@ class MenuTest {
                 "Wrong zip code.");
     }
 
+    /**
+     * Tests Prompt_Phone.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_Phone()
+    {
+        /**
+         * Prepare input(phone number) for the test.
+         */
+        String input = "111-1111";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("111-1111", Menu.prompt_Phone());
+
+        // Test 2
+        /**
+         * Prepare input(phone number) for the test.
+         */
+        input = "222-2222";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("222-2222", Menu.prompt_Phone());
+
+        // Failure
+        assertNotEquals("000-0000", "222-2222",
+                "Wrong phone number.");
+    }
+
 }
