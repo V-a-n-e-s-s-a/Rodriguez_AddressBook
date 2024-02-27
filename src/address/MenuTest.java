@@ -43,6 +43,20 @@ class MenuTest {
     }
 
     /**
+     * Method to restore System.out after each test method runs.
+     *
+     * Used for all methods in MenuTest.
+     */
+    @org.junit.jupiter.api.AfterEach
+    public void restoreStreams()
+    {
+        /**
+         * Restore standard output to its original value.
+         */
+        System.setOut(originalOut);
+    }
+
+    /**
      * Tests DisplayMenu.
      * @throws FileNotFoundException
      */
