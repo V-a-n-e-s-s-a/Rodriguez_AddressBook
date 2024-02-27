@@ -192,4 +192,40 @@ class MenuTest {
                 "Wrong street.");
     }
 
+    /**
+     * Tests Prompt_City.
+     */
+    @org.junit.jupiter.api.Test
+    public void testPrompt_City()
+    {
+        /**
+         * Prepare input(city) for the test.
+         */
+        String input = "Hayward";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("Hayward", Menu.prompt_City());
+
+        // Test 2
+        /**
+         * Prepare input(city) for the test.
+         */
+        input = "Oakland";
+        InputStream in2 = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in2);
+
+        /**
+         * Compare actual and expected output.
+         */
+        assertEquals("Oakland", Menu.prompt_City());
+
+        // Failure
+        assertNotEquals("NotOakland", "Oakland",
+                "Wrong street.");
+    }
+
 }
