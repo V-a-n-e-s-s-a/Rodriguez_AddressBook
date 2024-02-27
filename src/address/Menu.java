@@ -128,12 +128,20 @@ public class Menu {
                     String input = scanFindLastName.nextLine();
                     Set<AddressEntry> entries = addressBook.find(input);
 
-                    System.out.println("The following entries were found in the address" +
-                            " book for a last name starting with " + input + "\n");
-
-                    for (AddressEntry foundEntry : entries)
+                    if (entries.isEmpty())
                     {
-                        System.out.println(foundEntry);
+                        System.out.println("No entries were found" + input + "\n");
+                    }
+
+                    else
+                    {
+                        System.out.println("The following entries were found in the address" +
+                                " book for a last name starting with " + input + "\n");
+
+                        for (AddressEntry foundEntry : entries)
+                        {
+                            System.out.println(foundEntry);
+                        }
                     }
 
                     break;
