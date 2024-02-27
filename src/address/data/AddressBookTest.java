@@ -217,6 +217,9 @@ class AddressBookTest {
 
     }
 
+    /**
+     * Tests remove.
+     */
     @org.junit.jupiter.api.Test
     public void testRemove()
     {
@@ -254,6 +257,11 @@ class AddressBookTest {
                 "Did not remove.");
     }
 
+    /**
+     * Tests readFromFile.
+     *
+     * @throws FileNotFoundException if a file is not found during file operations
+     */
     @org.junit.jupiter.api.Test
     public void testReadFromFile() throws FileNotFoundException {
         /**
@@ -323,4 +331,5 @@ class AddressBookTest {
         assertNotEquals("wrong@email.com", entry3.getEmail(),
                 "Incorrect email.");
     }
+
 }
